@@ -44,9 +44,6 @@ function Header () {
   query: IS_LOGGED_IN
 });
 
-  console.log(isLoggedIn);
-
-
   return (
     <HeaderBar>
         <LogoText>NOTEDLY</LogoText>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes, Navigate, Outlet } from 'react-router-dom'
 import { gql, useApolloClient } from '@apollo/client';
 import Layout from '../compnents/Layout'
 import Favorites from './favorites'
@@ -17,9 +17,15 @@ const IS_LOGGED_IN = gql`
   }
 `;
 
+// const PrivateRoute = () => {
+//     const auth = null; // determine if authorized, from context or however you're doing it
 
+//     // If authorized, return an outlet that will render child elements
+//     // If not, return element that will navigate to login page
+//     return auth ? <Outlet /> : <Navigate to="/login" />;
+// }
 
-const PrivateRoute = ({ component: Component, ...rest }) =>{
+const PrivateRoute = () =>{
 
     const client = useApolloClient();
     // const navigate = useNavigate();
@@ -27,33 +33,22 @@ const PrivateRoute = ({ component: Component, ...rest }) =>{
     const isLoggedIn = client.readQuery({
         query: IS_LOGGED_IN
       });
-    
-    return <Route {...rest} render={(props) => (
-        isLoggedIn
-            ? <Component {...props} />
-            : <Navigate replace to='/signin' />
-        )} 
-    />
 
+    return isLoggedIn ? <Outlet /> : <Navigate replace to='/signin' />
 }
 
-// const PrivateRoute = ({ component: Component, handleChildFunc, ...rest }) => {
-//     const user = "token from cookie";
-//     return <Route {...rest} render={(props) => (
-//         user !== null
-//             ? <Component {...props} user={user} handleChildFunc={handleChildFunc}/>
-//             : <Redirect to='/login' />
-//         )} 
-//     />
-// }
 
 const Pages = () => {
     return (
         <Layout>
             <Routes>            
                 <Route path="/" element={<Home />} />
-                <PrivateRoute path="/mynotes" element={<MyNotes />} />
-                <PrivateRoute path="/favorites" element={<Favorites />} />
+                <Route path="/" element={<PrivateRoute />}>
+                    <Route path="/mynotes" element={<MyNotes />} /> 
+                </Route>
+                <Route path="/" element={<PrivateRoute />}>
+                    <Route path="/favorites" element={<Favorites />} /> 
+                </Route>
                 <Route path="/note/:id" element={<NotePage />} />
                 <Route path="/signup" element={<SingUp />} />
                 <Route path="/signin" element={<SignIn />} />
