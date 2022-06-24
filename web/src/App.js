@@ -25,12 +25,7 @@ const client = new ApolloClient({
   connectToDevTools: true
 });
 
-// client.cache.writeData({ data: { isLoggedIn: true } });
-// console.log(client);
-
 function App() {
-
-  
 
   return (
     <ApolloProvider client={client}>
