@@ -48,6 +48,9 @@ function Navigator() {
             <li>
                 <Link to='/favorites'>Favorites</Link>
             </li>
+            <li>
+                <Link to='/new'>new</Link>
+            </li>
         </NavList>
     </Nav>
   )

@@ -8,6 +8,7 @@ import MyNotes from './mynotes'
 import NotePage from './notes'
 import SingUp from './signUp'
 import SignIn from './singIn'
+import NewNote from './news';
 
 const IS_LOGGED_IN = gql`
   query ReadCacheData($id: ID!) {
@@ -39,7 +40,10 @@ const Pages = () => {
                 </Route>
                 <Route path="/" element={<PrivateRoute />}>
                     <Route path="/favorites" element={<Favorites />} /> 
-                </Route>
+                </Route>                
+                <Route path="/" element={<PrivateRoute />}>
+                    <Route path="/new" element={<NewNote />} /> 
+                </Route>               
                 <Route path="/note/:id" element={<NotePage />} />
                 <Route path="/signup" element={<SingUp />} />
                 <Route path="/signin" element={<SignIn />} />
