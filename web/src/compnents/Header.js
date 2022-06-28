@@ -48,7 +48,7 @@ function Header () {
     <HeaderBar>
         <LogoText>NOTEDLY</LogoText>
         <UserState>
-          { isLoggedIn ? (
+          { isLoggedIn || localStorage.getItem('token') ? (
             <ButtonAsLink
               onClick={() => {
                 localStorage.removeItem('token');

@@ -2,6 +2,7 @@ import React from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { format }  from 'date-fns'
 import styled from 'styled-components'
+import NoteUser from '../compnents/NoteUser'
 
 const StyledNote = styled.article`
     max-width: 800px;
@@ -24,6 +25,7 @@ const UserActions = styled.div`
 `;
 
 const Note = ({note}) => {
+
   return (
     <StyledNote>
         <MetaData>
@@ -38,11 +40,17 @@ const Note = ({note}) => {
                 <em>by</em> {note.author.username} <br />
                 {format(Date.parse(note.createdAt), 'yyyy-MM-dd')}
             </MetaInfo>
-            <UserActions>
+            { localStorage.getItem('token') ? (
+                <UserActions>
+                    <NoteUser note={note} />
+                </UserActions>
+            ) : 
+            (<UserActions>
                 <em>Favorites: </em> {note.favoriteCount}
-            </UserActions>
+            </UserActions>)
+            }
         </MetaData>
-        <ReactMarkdown children={note.conten} />
+        <ReactMarkdown children={note.content} />
     </StyledNote>
   )
 }

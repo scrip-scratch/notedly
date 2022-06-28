@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes, Navigate, Outlet } from 'react-router-dom'
-import { gql, useApolloClient } from '@apollo/client';
+import { useApolloClient } from '@apollo/client';
 import Layout from '../compnents/Layout'
 import Favorites from './favorites'
 import Home from './home'
@@ -9,14 +9,9 @@ import NotePage from './notes'
 import SingUp from './signUp'
 import SignIn from './singIn'
 import NewNote from './news';
+import { IS_LOGGED_IN } from '../qql/query';
+import EditNote from './edit';
 
-const IS_LOGGED_IN = gql`
-  query ReadCacheData($id: ID!) {
-    cacheData(id: $id) {
-      isLoggedIn
-    }
-  }
-`;
 
 const PrivateRoute = () =>{
 
@@ -26,7 +21,7 @@ const PrivateRoute = () =>{
         query: IS_LOGGED_IN
       });
 
-    return isLoggedIn ? <Outlet /> : <Navigate replace to='/signin' />
+    return isLoggedIn || localStorage.getItem('token') ? <Outlet /> : <Navigate replace to='/signin' />
 }
 
 
@@ -43,7 +38,10 @@ const Pages = () => {
                 </Route>                
                 <Route path="/" element={<PrivateRoute />}>
                     <Route path="/new" element={<NewNote />} /> 
-                </Route>               
+                </Route>  
+                <Route path="/" element={<PrivateRoute />}>
+                    <Route path="/edit/:id" render={props => {<EditNote />}} /> 
+                </Route>              
                 <Route path="/note/:id" element={<NotePage />} />
                 <Route path="/signup" element={<SingUp />} />
                 <Route path="/signin" element={<SignIn />} />

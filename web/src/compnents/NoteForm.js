@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import Button from './Button';
 
 const Wrapper = styled.div`
@@ -28,6 +29,8 @@ const NoteForm = props => {
     });
   };
 
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <Form
@@ -35,9 +38,11 @@ const NoteForm = props => {
         e.preventDefault();
         props.action({
           variables: {
-            ...props.values
+            ...value
           }
+          
         });
+        navigate('/');
       }}>
         <TextArea 
           required
