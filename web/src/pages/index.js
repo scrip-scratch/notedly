@@ -40,7 +40,7 @@ const Pages = () => {
                     <Route path="/new" element={<NewNote />} /> 
                 </Route>  
                 <Route path="/" element={<PrivateRoute />}>
-                    <Route path="/edit/:id" render={props => {<EditNote />}} /> 
+                    <Route path="/edit/:id" element= {<EditNote />} /> 
                 </Route>              
                 <Route path="/note/:id" element={<NotePage />} />
                 <Route path="/signup" element={<SingUp />} />

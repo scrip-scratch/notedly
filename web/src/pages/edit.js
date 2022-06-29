@@ -1,13 +1,16 @@
 import { useMutation, useQuery } from '@apollo/client';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import NoteForm from '../compnents/NoteForm';
 import { EDIT_NOTE } from '../qql/mutation';
 import { GET_ME, GET_NOTE } from '../qql/query';
 
-const EditNote = props => {
-    const id = props.match.params.id;
+const EditNote = () => {
+
+    const params = useParams();
     const navigate = useNavigate();
+
+    const id = params.id;
 
     const { loading, error, data } = useQuery(GET_NOTE, { variables: {id}});
 

@@ -23,11 +23,12 @@ const NEW_NOTE = gql`
 `;
 
 const NewNote = props => {
+
+    console.log(props);
+
     useEffect(() => {
         document.title = 'New Note - Notedly';
     })
-
-
 
     const [data, {loading, error}] = useMutation(NEW_NOTE, {
       refetchQueries: [{query: GET_NOTES}, {query: GET_MY_NOTES}],

@@ -11,15 +11,12 @@ const NoteUser = props => {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error!</p>
 
-  
-  console.log(data);
-
   return (
     <React.Fragment>
       <br />
       {data.me.id === props.note.author.id && (
         <React.Fragment>
-          <Link to={`/edit/${props.note.id}`}>Edit</Link> <br />
+          <Link to={`/edit/${props.note.id}`} props={props}>Edit</Link> <br />
           <DeleteNote noteId={props.note.id} />
         </React.Fragment>
       )}
