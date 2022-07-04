@@ -24,8 +24,6 @@ const NEW_NOTE = gql`
 
 const NewNote = props => {
 
-    console.log(props);
-
     useEffect(() => {
         document.title = 'New Note - Notedly';
     })
