@@ -1,6 +1,10 @@
-notedly
-Practice with the book "Javascript Everywhere" by Adam Scott
+Обучение и тренировка по книге "Разработка на JavaScript" Адама Скотта.
+Learning and practicing with book "JavaScript everywhere" by Adam Scott.
 
-Right now on the chapter 15. Have resolved problem with new version of Appolo Client and InMemoryCash. Quit easy, by using the Appolo's queries. But I don't now how it will work in the next chapters.Could check web/src/components/Header.js
+Не смотря на последнее доступное издание книги, столкнулся со множеством проблем в разнице актуальных версий используемых технологий с данными в книге (React, Apollo Client). Все способы решения можно найти в коде, иерархия папок сохранена.
+Despite reading the last available edition of the book, I faced with many problems with differences of versions in the book and current. (React, Apollo Client)
 
-Add PrivateRoute with another way. Could check web/src/pages/index.js
+На данный момент нахожусь на главе 17 на этапе развертывания приложения.
+Now I'm on the chapter 17 at the application deployment stage.
+
+Сергей Жвакин @scripscratch
