@@ -1,7 +1,7 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import { useQuery, gql } from '@apollo/client'
-import Note from '../compnents/Note'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useQuery, gql } from '@apollo/client';
+import Note from '../compnents/Note';
 
 const GET_NOTE = gql`
     query note($id: ID!) {
@@ -17,7 +17,7 @@ const GET_NOTE = gql`
             }
         }
     }
-`
+`;
 
 const NotePage = props => {
 
@@ -30,6 +30,6 @@ const NotePage = props => {
     if(error) return <p>Error! Note not found</p>
 
   return <Note note={data.note} />
-}
+};
 
-export default NotePage
+export default NotePage;

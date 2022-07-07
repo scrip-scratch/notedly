@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { useApolloClient, useMutation, gql } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import UserForm from '../compnents/UserForm';
@@ -45,6 +45,6 @@ function SingUp () {
         {error && <p>Error creating an account!</p>}
     </React.Fragment>
   )
-}
+};
 
-export default SingUp
+export default SingUp;

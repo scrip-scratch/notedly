@@ -1,6 +1,6 @@
-import { gql, useMutation } from '@apollo/client'
-import React, { useEffect } from 'react'
-import NoteForm from '../compnents/NoteForm'
+import { gql, useMutation } from '@apollo/client';
+import React, { useEffect } from 'react';
+import NoteForm from '../compnents/NoteForm';
 import { GET_MY_NOTES, GET_NOTES } from '../qql/query';
 
 const NEW_NOTE = gql`
@@ -42,6 +42,6 @@ const NewNote = props => {
       <NoteForm action={data}/>
     </React.Fragment>
   )
-}
+};
 
-export default NewNote
+export default NewNote;

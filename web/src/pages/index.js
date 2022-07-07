@@ -1,13 +1,13 @@
-import React from 'react'
-import { Route, Routes, Navigate, Outlet } from 'react-router-dom'
+import React from 'react';
+import { Route, Routes, Navigate, Outlet } from 'react-router-dom';
 import { useApolloClient } from '@apollo/client';
-import Layout from '../compnents/Layout'
-import Favorites from './favorites'
-import Home from './home'
-import MyNotes from './mynotes'
-import NotePage from './notes'
-import SingUp from './signUp'
-import SignIn from './singIn'
+import Layout from '../compnents/Layout';
+import Favorites from './favorites';
+import Home from './home';
+import MyNotes from './mynotes';
+import NotePage from './notes';
+import SingUp from './signUp';
+import SignIn from './singIn';
 import NewNote from './news';
 import { IS_LOGGED_IN } from '../qql/query';
 import EditNote from './edit';
@@ -22,7 +22,7 @@ const PrivateRoute = () =>{
       });
 
     return isLoggedIn || localStorage.getItem('token') ? <Outlet /> : <Navigate replace to='/signin' />
-}
+};
 
 
 const Pages = () => {
@@ -49,6 +49,6 @@ const Pages = () => {
             </Routes>
         </Layout>
     )
-}
+};
 
-export default Pages
+export default Pages;

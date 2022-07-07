@@ -1,9 +1,9 @@
-import { useQuery } from '@apollo/client'
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { GET_ME } from '../qql/query'
-import DeleteNote from './DeleteNote'
-import FavoriteNote from './FavoriteNote'
+import { useQuery } from '@apollo/client';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { GET_ME } from '../qql/query';
+import DeleteNote from './DeleteNote';
+import FavoriteNote from './FavoriteNote';
 
 
 
@@ -30,6 +30,6 @@ const NoteUser = props => {
       )}
     </React.Fragment>
   )
-}
+};
 
-export default NoteUser
+export default NoteUser;

@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { GET_MY_NOTES } from '../qql/query';
-import NoteFeed from '../compnents/NoteFeed'
+import NoteFeed from '../compnents/NoteFeed';
 
 function MyNotes() {
     useEffect(() => {
@@ -19,4 +19,4 @@ function MyNotes() {
     }
 }
 
-export default MyNotes
+export default MyNotes;

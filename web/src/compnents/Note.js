@@ -1,8 +1,8 @@
-import React from 'react'
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import { format }  from 'date-fns'
-import styled from 'styled-components'
-import NoteUser from '../compnents/NoteUser'
+import React from 'react';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { format }  from 'date-fns';
+import styled from 'styled-components';
+import NoteUser from '../compnents/NoteUser';
 
 const StyledNote = styled.article`
     max-width: 800px;
@@ -53,6 +53,6 @@ const Note = ({note}) => {
         <ReactMarkdown children={note.content} />
     </StyledNote>
   )
-}
+};
 
-export default Note
+export default Note;

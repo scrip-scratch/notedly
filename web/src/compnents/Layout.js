@@ -1,6 +1,6 @@
-import React from 'react'
-import Header from './Header'
-import Navigator from './Navigator'
+import React from 'react';
+import Header from './Header';
+import Navigator from './Navigator';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -42,6 +42,6 @@ const Layout = ( {children} ) => {
         </Wrapper>
     </React.Fragment>
   )
-}
+};
 
-export default Layout
+export default Layout;

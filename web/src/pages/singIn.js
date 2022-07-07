@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { useMutation, gql, useApolloClient } from '@apollo/client'
+import React, { useEffect } from 'react';
+import { useMutation, gql, useApolloClient } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import UserForm from '../compnents/UserForm';
 
@@ -44,6 +44,6 @@ const SignIn = () => {
         {error && <p>Error signing in!</p>}
     </React.Fragment>
   )
-}
+};
 
-export default SignIn
+export default SignIn;

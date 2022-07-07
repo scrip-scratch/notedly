@@ -1,10 +1,10 @@
-const Mutation = require('./mutation');
-const Query = require('./query');
-const Note = require('./note');
-const User = require('./users');
-const { GraphQLDateTime } = require('graphql-iso-date');
+import Mutation from './mutation';
+import Query from './query';
+import Note from './note';
+import User from './users';
+import GraphQLDateTime from 'graphql-iso-date';
 
-module.exports = {
+export default {
     Query,
     Mutation,
     Note,

@@ -2,7 +2,7 @@ import React from 'react';
 import Pages from './pages';
 import GlobalStyle from './compnents/GlobalStyle';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import { createHttpLink } from "@apollo/client/link/http"
+import { createHttpLink } from "@apollo/client/link/http";
 import { setContext } from 'apollo-link-context';
 
 const uri = process.env.REACT_APP_API_URI ;

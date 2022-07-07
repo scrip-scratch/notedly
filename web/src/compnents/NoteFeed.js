@@ -1,6 +1,6 @@
-import React from 'react'
-import Note from './Note'
-import styled from 'styled-components'
+import React from 'react';
+import Note from './Note';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const NoteWrapper = styled.div`
@@ -23,6 +23,6 @@ const NoteFeed = ({notes}) => {
     </div>
     
   )
-}
+};
 
-export default NoteFeed
+export default NoteFeed;

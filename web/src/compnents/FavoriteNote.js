@@ -1,8 +1,8 @@
-import { useMutation } from '@apollo/client'
-import React, { useState } from 'react'
-import { TOGGLE_FAVORITE } from '../qql/mutation'
-import { GET_MY_FAVORITES } from '../qql/query'
-import ButtonAsLink from './ButtonAsLink'
+import { useMutation } from '@apollo/client';
+import React, { useState } from 'react';
+import { TOGGLE_FAVORITE } from '../qql/mutation';
+import { GET_MY_FAVORITES } from '../qql/query';
+import ButtonAsLink from './ButtonAsLink';
 
 const FavoriteNote = props => {
 
@@ -15,9 +15,6 @@ const FavoriteNote = props => {
         },
         refetchQueries: [{guery: GET_MY_FAVORITES}]
     });
-
-    console.log(props);
-    console.log(props.noteId);
 
   return (
     <React.Fragment>
@@ -45,6 +42,6 @@ const FavoriteNote = props => {
         :{count} 
     </React.Fragment>
   )
-}
+};
 
 export default FavoriteNote;

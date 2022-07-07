@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import Button from './Button';
 
 const Wrapper = styled.div`
@@ -20,7 +20,7 @@ const Form = styled.form`
         width: 100%;
         margin-bottom: 1em;
     }
-`
+`;
 
 const UserForm = (props) => {
 
@@ -80,6 +80,6 @@ const UserForm = (props) => {
         </Form>
     </Wrapper>
   )
-}
+};
 
-export default UserForm
+export default UserForm;

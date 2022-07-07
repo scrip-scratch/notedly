@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { GET_MY_FAVORITES } from '../qql/query';
-import NoteFeed from '../compnents/NoteFeed'
+import NoteFeed from '../compnents/NoteFeed';
 
 
 function Favorites() {
@@ -20,4 +20,4 @@ function Favorites() {
     }
 }
 
-export default Favorites
+export default Favorites;

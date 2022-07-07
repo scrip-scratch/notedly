@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -54,6 +54,6 @@ function Navigator() {
         </NavList>
     </Nav>
   )
-}
+};
 
-export default Navigator
+export default Navigator;

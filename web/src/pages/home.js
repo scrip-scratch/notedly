@@ -1,9 +1,9 @@
 import React from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 import NoteFeed from '../compnents/NoteFeed';
 import Button from '../compnents/Button';
-import { GET_NOTES, IS_LOGGED_IN } from '../qql/query';
+import { GET_NOTES } from '../qql/query';
 
 const Home = () => {
   const { data, loading, error, fetchMore } = useQuery(GET_NOTES);
@@ -46,4 +46,4 @@ const Home = () => {
 }
 
 
-export default Home
+export default Home;

@@ -58,4 +58,4 @@ const NoteForm = props => {
   )
 }
 
-export default NoteForm
+export default NoteForm;

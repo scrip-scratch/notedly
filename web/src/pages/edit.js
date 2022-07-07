@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from '@apollo/client';
-import React from 'react'
+import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import NoteForm from '../compnents/NoteForm';
 import { EDIT_NOTE } from '../qql/mutation';
@@ -23,7 +23,7 @@ const EditNote = () => {
         onCompleted: () => {
             navigate(`/note/${id}`);
         }
-    })
+    });
 
 
     if (loading) return 'Loading...';
@@ -31,10 +31,10 @@ const EditNote = () => {
 
     if (userdata.me.id !== data.note.author.id) {
         return <p>You dont have access to edit this note</p>
-    }
+    };
   return (
     <NoteForm content={data.note.content} action={editNote} />
   )
-}
+};
 
 export default EditNote;
